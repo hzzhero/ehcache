@@ -1,5 +1,6 @@
 package com.itclj.client;
 
+import com.itclj.cache.Country;
 import com.itclj.cache.CountryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +57,8 @@ public class SampleClient {
         String randomCode = SAMPLE_COUNTRY_CODES
                 .get(this.random.nextInt(SAMPLE_COUNTRY_CODES.size()));
         logger.info("Looking for country with code '{}'",randomCode);
-        this.countryService.findByCode(randomCode);
+        Country findByCode = this.countryService.findByCode(randomCode);
+        logger.info(findByCode.toString());
     }
 
 }

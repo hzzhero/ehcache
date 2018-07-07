@@ -21,4 +21,10 @@ public class Country implements Serializable {
     public void setCode(String code) {
         this.code = code;
     }
+
+	@Override
+	public String toString() {
+		return "Country [code=" + code + "]";
+	}
+    
 }
